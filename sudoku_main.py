@@ -83,99 +83,206 @@ def shownextscreen():
     mainscreen.hide()
     solver_screen.show()
 
+def str2int(buffer):
+    if buffer == None or buffer == "":
+        return 0
+    else:
+        return int(buffer)
+    
 def startsolving():
-    a[0][0] = int (ui_screen.box1.toPlainText())
-    a[0][1] = int (ui_screen.box2.toPlainText())
-    a[0][2] = int (ui_screen.box3.toPlainText())
-    a[0][3] = int (ui_screen.box4.toPlainText())
-    a[0][4] = int (ui_screen.box5.toPlainText())
-    a[0][5] = int (ui_screen.box6.toPlainText())
-    a[0][6] = int (ui_screen.box7.toPlainText())
-    a[0][7] = int (ui_screen.box8.toPlainText())
-    a[0][8] = int (ui_screen.box9.toPlainText())
+    a = [ 
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0],
+            [0,0,0, 0,0,0, 0,0,0] 
+        
+    ]
+    a[0][0] = str2int (ui_screen.box1.toPlainText())
+    a[0][1] = str2int (ui_screen.box2.toPlainText())
+    a[0][2] = str2int (ui_screen.box3.toPlainText())
+    a[0][3] = str2int (ui_screen.box4.toPlainText())
+    a[0][4] = str2int (ui_screen.box5.toPlainText())
+    a[0][5] = str2int (ui_screen.box6.toPlainText())
+    a[0][6] = str2int (ui_screen.box7.toPlainText())
+    a[0][7] = str2int (ui_screen.box8.toPlainText())
+    a[0][8] = str2int (ui_screen.box9.toPlainText())
 
-    a[0][0] = int (ui_screen.box10.toPlainText())
-    a[1][1] = int (ui_screen.box11.toPlainText())
-    a[1][2] = int (ui_screen.box12.toPlainText())
-    a[1][3] = int (ui_screen.box13.toPlainText())
-    a[1][4] = int (ui_screen.box14.toPlainText())
-    a[1][5] = int (ui_screen.box15.toPlainText())
-    a[1][6] = int (ui_screen.box16.toPlainText())
-    a[1][7] = int (ui_screen.box17.toPlainText())
-    a[1][8] = int (ui_screen.box18.toPlainText())
+    a[0][0] = str2int (ui_screen.box10.toPlainText())
+    a[1][1] = str2int (ui_screen.box11.toPlainText())
+    a[1][2] = str2int (ui_screen.box12.toPlainText())
+    a[1][3] = str2int (ui_screen.box13.toPlainText())
+    a[1][4] = str2int (ui_screen.box14.toPlainText())
+    a[1][5] = str2int (ui_screen.box15.toPlainText())
+    a[1][6] = str2int (ui_screen.box16.toPlainText())
+    a[1][7] = str2int (ui_screen.box17.toPlainText())
+    a[1][8] = str2int (ui_screen.box18.toPlainText())
 
-    a[2][0] = int (ui_screen.box19.toPlainText())
-    a[2][1] = int (ui_screen.box20.toPlainText())
-    a[2][2] = int (ui_screen.box21.toPlainText())
-    a[2][3] = int (ui_screen.box22.toPlainText())
-    a[2][4] = int (ui_screen.box23.toPlainText())
-    a[2][5] = int (ui_screen.box24.toPlainText())
-    a[2][6] = int (ui_screen.box25.toPlainText())
-    a[2][7] = int (ui_screen.box26.toPlainText())
-    a[2][8] = int (ui_screen.box27.toPlainText())
+    a[2][0] = str2int (ui_screen.box19.toPlainText())
+    a[2][1] = str2int (ui_screen.box20.toPlainText())
+    a[2][2] = str2int (ui_screen.box21.toPlainText())
+    a[2][3] = str2int (ui_screen.box22.toPlainText())
+    a[2][4] = str2int (ui_screen.box23.toPlainText())
+    a[2][5] = str2int (ui_screen.box24.toPlainText())
+    a[2][6] = str2int (ui_screen.box25.toPlainText())
+    a[2][7] = str2int (ui_screen.box26.toPlainText())
+    a[2][8] = str2int (ui_screen.box27.toPlainText())
 
-    a[3][0] = int (ui_screen.box28.toPlainText())
-    a[3][1] = int (ui_screen.box29.toPlainText())
-    a[3][2] = int (ui_screen.box30.toPlainText())
-    a[3][3] = int (ui_screen.box31.toPlainText())
-    a[3][4] = int (ui_screen.box32.toPlainText())
-    a[3][5] = int (ui_screen.box33.toPlainText())
-    a[3][6] = int (ui_screen.box34.toPlainText())
-    a[3][7] = int (ui_screen.box35.toPlainText())
-    a[3][8] = int (ui_screen.box36.toPlainText())
+    a[3][0] = str2int (ui_screen.box28.toPlainText())
+    a[3][1] = str2int (ui_screen.box29.toPlainText())
+    a[3][2] = str2int (ui_screen.box30.toPlainText())
+    a[3][3] = str2int (ui_screen.box31.toPlainText())
+    a[3][4] = str2int (ui_screen.box32.toPlainText())
+    a[3][5] = str2int (ui_screen.box33.toPlainText())
+    a[3][6] = str2int (ui_screen.box34.toPlainText())
+    a[3][7] = str2int (ui_screen.box35.toPlainText())
+    a[3][8] = str2int (ui_screen.box36.toPlainText())
 
-    a[4][0] = int (ui_screen.box37.toPlainText())
-    a[4][1] = int (ui_screen.box38.toPlainText())
-    a[4][2] = int (ui_screen.box39.toPlainText())
-    a[4][3] = int (ui_screen.box40.toPlainText())
-    a[4][4] = int (ui_screen.box41.toPlainText())
-    a[4][5] = int (ui_screen.box42.toPlainText())
-    a[4][6] = int (ui_screen.box43.toPlainText())
-    a[4][7] = int (ui_screen.box44.toPlainText())
-    a[4][8] = int (ui_screen.box45.toPlainText())
+    a[4][0] = str2int (ui_screen.box37.toPlainText())
+    a[4][1] = str2int (ui_screen.box38.toPlainText())
+    a[4][2] = str2int (ui_screen.box39.toPlainText())
+    a[4][3] = str2int (ui_screen.box40.toPlainText())
+    a[4][4] = str2int (ui_screen.box41.toPlainText())
+    a[4][5] = str2int (ui_screen.box42.toPlainText())
+    a[4][6] = str2int (ui_screen.box43.toPlainText())
+    a[4][7] = str2int (ui_screen.box44.toPlainText())
+    a[4][8] = str2int (ui_screen.box45.toPlainText())
 
-    a[5][0] = int (ui_screen.box46.toPlainText())
-    a[5][1] = int (ui_screen.box47.toPlainText())
-    a[5][2] = int (ui_screen.box48.toPlainText())
-    a[5][3] = int (ui_screen.box49.toPlainText())
-    a[5][4] = int (ui_screen.box50.toPlainText())
-    a[5][5] = int (ui_screen.box51.toPlainText())
-    a[5][6] = int (ui_screen.box52.toPlainText())
-    a[5][7] = int (ui_screen.box53.toPlainText())
-    a[5][8] = int (ui_screen.box54.toPlainText())
+    a[5][0] = str2int (ui_screen.box46.toPlainText())
+    a[5][1] = str2int (ui_screen.box47.toPlainText())
+    a[5][2] = str2int (ui_screen.box48.toPlainText())
+    a[5][3] = str2int (ui_screen.box49.toPlainText())
+    a[5][4] = str2int (ui_screen.box50.toPlainText())
+    a[5][5] = str2int (ui_screen.box51.toPlainText())
+    a[5][6] = str2int (ui_screen.box52.toPlainText())
+    a[5][7] = str2int (ui_screen.box53.toPlainText())
+    a[5][8] = str2int (ui_screen.box54.toPlainText())
 
-    a[6][0] = int (ui_screen.box55.toPlainText())
-    a[6][1] = int (ui_screen.box56.toPlainText())
-    a[6][2] = int (ui_screen.box57.toPlainText())
-    a[6][3] = int (ui_screen.box58.toPlainText())
-    a[6][4] = int (ui_screen.box59.toPlainText())
-    a[6][5] = int (ui_screen.box60.toPlainText())
-    a[6][6] = int (ui_screen.box61.toPlainText())
-    a[6][7] = int (ui_screen.box62.toPlainText())
-    a[6][8] = int (ui_screen.box63.toPlainText())
+    a[6][0] = str2int (ui_screen.box55.toPlainText())
+    a[6][1] = str2int (ui_screen.box56.toPlainText())
+    a[6][2] = str2int (ui_screen.box57.toPlainText())
+    a[6][3] = str2int (ui_screen.box58.toPlainText())
+    a[6][4] = str2int (ui_screen.box59.toPlainText())
+    a[6][5] = str2int (ui_screen.box60.toPlainText())
+    a[6][6] = str2int (ui_screen.box61.toPlainText())
+    a[6][7] = str2int (ui_screen.box62.toPlainText())
+    a[6][8] = str2int (ui_screen.box63.toPlainText())
 
-    a[7][0] = int (ui_screen.box64.toPlainText())
-    a[7][1] = int (ui_screen.box65.toPlainText())
-    a[7][2] = int (ui_screen.box66.toPlainText())
-    a[7][3] = int (ui_screen.box67.toPlainText())
-    a[7][4] = int (ui_screen.box68.toPlainText())
-    a[7][5] = int (ui_screen.box69.toPlainText())
-    a[7][6] = int (ui_screen.box70.toPlainText())
-    a[7][7] = int (ui_screen.box71.toPlainText())
-    a[7][8] = int (ui_screen.box72.toPlainText())
+    a[7][0] = str2int (ui_screen.box64.toPlainText())
+    a[7][1] = str2int (ui_screen.box65.toPlainText())
+    a[7][2] = str2int (ui_screen.box66.toPlainText())
+    a[7][3] = str2int (ui_screen.box67.toPlainText())
+    a[7][4] = str2int (ui_screen.box68.toPlainText())
+    a[7][5] = str2int (ui_screen.box69.toPlainText())
+    a[7][6] = str2int (ui_screen.box70.toPlainText())
+    a[7][7] = str2int (ui_screen.box71.toPlainText())
+    a[7][8] = str2int (ui_screen.box72.toPlainText())
 
-    a[8][0] = int (ui_screen.box73.toPlainText())
-    a[8][1] = int (ui_screen.box74.toPlainText())
-    a[8][2] = int (ui_screen.box75.toPlainText())
-    a[8][3] = int (ui_screen.box76.toPlainText())
-    a[8][4] = int (ui_screen.box77.toPlainText())
-    a[8][5] = int (ui_screen.box78.toPlainText())
-    a[8][6] = int (ui_screen.box79.toPlainText())
-    a[8][7] = int (ui_screen.box80.toPlainText())
-    a[8][8] = int (ui_screen.box81.toPlainText())
+    a[8][0] = str2int (ui_screen.box73.toPlainText())
+    a[8][1] = str2int (ui_screen.box74.toPlainText())
+    a[8][2] = str2int (ui_screen.box75.toPlainText())
+    a[8][3] = str2int (ui_screen.box76.toPlainText())
+    a[8][4] = str2int (ui_screen.box77.toPlainText())
+    a[8][5] = str2int (ui_screen.box78.toPlainText())
+    a[8][6] = str2int (ui_screen.box79.toPlainText())
+    a[8][7] = str2int (ui_screen.box80.toPlainText())
+    a[8][8] = str2int (ui_screen.box81.toPlainText())
 
     if solve(a):
-        pass
+        ui_screen.box1.setPlainText(str(a[0][0]));
+        ui_screen.box2.setPlainText(str(a[0][1]));
+        ui_screen.box3.setPlainText(str(a[0][2]));
+        ui_screen.box4.setPlainText(str(a[0][3]));
+        ui_screen.box5.setPlainText(str(a[0][4]));
+        ui_screen.box6.setPlainText(str(a[0][5]));
+        ui_screen.box7.setPlainText(str(a[0][6]));
+        ui_screen.box8.setPlainText(str(a[0][7]));
+        ui_screen.box9.setPlainText(str(a[0][8]));
+
+
+        ui_screen.box10.setPlainText(str(a[1][0]));
+        ui_screen.box11.setPlainText(str(a[1][1]));
+        ui_screen.box12.setPlainText(str(a[1][2]));
+        ui_screen.box13.setPlainText(str(a[1][3]));
+        ui_screen.box14.setPlainText(str(a[1][4]));
+        ui_screen.box15.setPlainText(str(a[1][5]));
+        ui_screen.box16.setPlainText(str(a[1][6]));
+        ui_screen.box17.setPlainText(str(a[1][7]));
+        ui_screen.box18.setPlainText(str(a[1][8]));
+
+        ui_screen.box19.setPlainText(str(a[2][0]));
+        ui_screen.box20.setPlainText(str(a[2][1]));
+        ui_screen.box21.setPlainText(str(a[2][2]));
+        ui_screen.box22.setPlainText(str(a[2][3]));
+        ui_screen.box23.setPlainText(str(a[2][4]));
+        ui_screen.box24.setPlainText(str(a[2][5]));
+        ui_screen.box25.setPlainText(str(a[2][6]));
+        ui_screen.box26.setPlainText(str(a[2][7]));
+        ui_screen.box27.setPlainText(str(a[2][8]));
+
+        ui_screen.box28.setPlainText(str(a[3][0]));
+        ui_screen.box29.setPlainText(str(a[3][1]));
+        ui_screen.box30.setPlainText(str(a[3][2]));
+        ui_screen.box31.setPlainText(str(a[3][3]));
+        ui_screen.box32.setPlainText(str(a[3][4]));
+        ui_screen.box33.setPlainText(str(a[3][5]));
+        ui_screen.box34.setPlainText(str(a[3][6]));
+        ui_screen.box35.setPlainText(str(a[3][7]));
+        ui_screen.box36.setPlainText(str(a[3][8]));
+
+        ui_screen.box37.setPlainText(str(a[4][0]));
+        ui_screen.box38.setPlainText(str(a[4][1]));
+        ui_screen.box39.setPlainText(str(a[4][2]));
+        ui_screen.box40.setPlainText(str(a[4][3]));
+        ui_screen.box41.setPlainText(str(a[4][4]));
+        ui_screen.box42.setPlainText(str(a[4][5]));
+        ui_screen.box43.setPlainText(str(a[4][6]));
+        ui_screen.box44.setPlainText(str(a[4][7]));
+        ui_screen.box45.setPlainText(str(a[4][8]));
+
+        ui_screen.box46.setPlainText(str(a[5][0]));
+        ui_screen.box47.setPlainText(str(a[5][1]));
+        ui_screen.box48.setPlainText(str(a[5][2]));
+        ui_screen.box49.setPlainText(str(a[5][3]));
+        ui_screen.box50.setPlainText(str(a[5][4]));
+        ui_screen.box51.setPlainText(str(a[5][5]));
+        ui_screen.box52.setPlainText(str(a[5][6]));
+        ui_screen.box53.setPlainText(str(a[5][7]));
+        ui_screen.box54.setPlainText(str(a[5][8]));
+
+        ui_screen.box55.setPlainText(str(a[6][0]));
+        ui_screen.box56.setPlainText(str(a[6][1]));
+        ui_screen.box57.setPlainText(str(a[6][2]));
+        ui_screen.box58.setPlainText(str(a[6][3]));
+        ui_screen.box59.setPlainText(str(a[6][4]));
+        ui_screen.box60.setPlainText(str(a[6][5]));
+        ui_screen.box61.setPlainText(str(a[6][6]));
+        ui_screen.box62.setPlainText(str(a[6][7]));
+        ui_screen.box63.setPlainText(str(a[6][8]));
+
+        ui_screen.box64.setPlainText(str(a[7][0]));
+        ui_screen.box65.setPlainText(str(a[7][1]));
+        ui_screen.box66.setPlainText(str(a[7][2]));
+        ui_screen.box67.setPlainText(str(a[7][3]));
+        ui_screen.box68.setPlainText(str(a[7][4]));
+        ui_screen.box69.setPlainText(str(a[7][5]));
+        ui_screen.box70.setPlainText(str(a[7][6]));
+        ui_screen.box71.setPlainText(str(a[7][7]));
+        ui_screen.box72.setPlainText(str(a[7][8]));
+
+        ui_screen.box73.setPlainText(str(a[8][0]));
+        ui_screen.box74.setPlainText(str(a[8][1]));
+        ui_screen.box75.setPlainText(str(a[8][2]));
+        ui_screen.box76.setPlainText(str(a[8][3]));
+        ui_screen.box77.setPlainText(str(a[8][4]));
+        ui_screen.box78.setPlainText(str(a[8][5]));
+        ui_screen.box79.setPlainText(str(a[8][6]));
+        ui_screen.box80.setPlainText(str(a[8][7]));
+        ui_screen.box81.setPlainText(str(a[8][8]));
 
     else:
         pass
