@@ -5,5 +5,5 @@ This is a small application which was written by me in c++.This repository is fo
 * Sreyas
 * Leon
 * Mridhul
-*
-*
+* Sandra Mariam
+* Renuka
