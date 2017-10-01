@@ -1,7 +1,7 @@
 import sys
 from gui_main import mainscreen,ui_main,app
 from gui_solver import solver_screen,ui_screen
-
+from PyQt5.QtWidgets import QMessageBox
 def UAN(a,i,j): 
  
     for i in range(0,9): 
@@ -51,7 +51,7 @@ def solve(a,i=0,j=0):
      
         if safe(a,i,j,k): 
          
-            a[i][j] = k; 
+            a[i][j] = k  
 
             if solve(a): 
                 return True 
@@ -193,99 +193,99 @@ def startsolving():
     a[8][8] = str2int (ui_screen.box81.toPlainText())
 
     if solve(a):
-        ui_screen.box1.setPlainText(str(a[0][0]));
-        ui_screen.box2.setPlainText(str(a[0][1]));
-        ui_screen.box3.setPlainText(str(a[0][2]));
-        ui_screen.box4.setPlainText(str(a[0][3]));
-        ui_screen.box5.setPlainText(str(a[0][4]));
-        ui_screen.box6.setPlainText(str(a[0][5]));
-        ui_screen.box7.setPlainText(str(a[0][6]));
-        ui_screen.box8.setPlainText(str(a[0][7]));
-        ui_screen.box9.setPlainText(str(a[0][8]));
+        ui_screen.box1.setPlainText(str(a[0][0]))
+        ui_screen.box2.setPlainText(str(a[0][1]))
+        ui_screen.box3.setPlainText(str(a[0][2]))
+        ui_screen.box4.setPlainText(str(a[0][3]))
+        ui_screen.box5.setPlainText(str(a[0][4])) 
+        ui_screen.box6.setPlainText(str(a[0][5])) 
+        ui_screen.box7.setPlainText(str(a[0][6])) 
+        ui_screen.box8.setPlainText(str(a[0][7])) 
+        ui_screen.box9.setPlainText(str(a[0][8])) 
 
 
-        ui_screen.box10.setPlainText(str(a[1][0]));
-        ui_screen.box11.setPlainText(str(a[1][1]));
-        ui_screen.box12.setPlainText(str(a[1][2]));
-        ui_screen.box13.setPlainText(str(a[1][3]));
-        ui_screen.box14.setPlainText(str(a[1][4]));
-        ui_screen.box15.setPlainText(str(a[1][5]));
-        ui_screen.box16.setPlainText(str(a[1][6]));
-        ui_screen.box17.setPlainText(str(a[1][7]));
-        ui_screen.box18.setPlainText(str(a[1][8]));
+        ui_screen.box10.setPlainText(str(a[1][0])) 
+        ui_screen.box11.setPlainText(str(a[1][1])) 
+        ui_screen.box12.setPlainText(str(a[1][2])) 
+        ui_screen.box13.setPlainText(str(a[1][3])) 
+        ui_screen.box14.setPlainText(str(a[1][4])) 
+        ui_screen.box15.setPlainText(str(a[1][5])) 
+        ui_screen.box16.setPlainText(str(a[1][6])) 
+        ui_screen.box17.setPlainText(str(a[1][7])) 
+        ui_screen.box18.setPlainText(str(a[1][8])) 
 
-        ui_screen.box19.setPlainText(str(a[2][0]));
-        ui_screen.box20.setPlainText(str(a[2][1]));
-        ui_screen.box21.setPlainText(str(a[2][2]));
-        ui_screen.box22.setPlainText(str(a[2][3]));
-        ui_screen.box23.setPlainText(str(a[2][4]));
-        ui_screen.box24.setPlainText(str(a[2][5]));
-        ui_screen.box25.setPlainText(str(a[2][6]));
-        ui_screen.box26.setPlainText(str(a[2][7]));
-        ui_screen.box27.setPlainText(str(a[2][8]));
+        ui_screen.box19.setPlainText(str(a[2][0])) 
+        ui_screen.box20.setPlainText(str(a[2][1])) 
+        ui_screen.box21.setPlainText(str(a[2][2])) 
+        ui_screen.box22.setPlainText(str(a[2][3])) 
+        ui_screen.box23.setPlainText(str(a[2][4])) 
+        ui_screen.box24.setPlainText(str(a[2][5])) 
+        ui_screen.box25.setPlainText(str(a[2][6])) 
+        ui_screen.box26.setPlainText(str(a[2][7])) 
+        ui_screen.box27.setPlainText(str(a[2][8])) 
 
-        ui_screen.box28.setPlainText(str(a[3][0]));
-        ui_screen.box29.setPlainText(str(a[3][1]));
-        ui_screen.box30.setPlainText(str(a[3][2]));
-        ui_screen.box31.setPlainText(str(a[3][3]));
-        ui_screen.box32.setPlainText(str(a[3][4]));
-        ui_screen.box33.setPlainText(str(a[3][5]));
-        ui_screen.box34.setPlainText(str(a[3][6]));
-        ui_screen.box35.setPlainText(str(a[3][7]));
-        ui_screen.box36.setPlainText(str(a[3][8]));
+        ui_screen.box28.setPlainText(str(a[3][0])) 
+        ui_screen.box29.setPlainText(str(a[3][1])) 
+        ui_screen.box30.setPlainText(str(a[3][2])) 
+        ui_screen.box31.setPlainText(str(a[3][3])) 
+        ui_screen.box32.setPlainText(str(a[3][4])) 
+        ui_screen.box33.setPlainText(str(a[3][5])) 
+        ui_screen.box34.setPlainText(str(a[3][6])) 
+        ui_screen.box35.setPlainText(str(a[3][7])) 
+        ui_screen.box36.setPlainText(str(a[3][8])) 
 
-        ui_screen.box37.setPlainText(str(a[4][0]));
-        ui_screen.box38.setPlainText(str(a[4][1]));
-        ui_screen.box39.setPlainText(str(a[4][2]));
-        ui_screen.box40.setPlainText(str(a[4][3]));
-        ui_screen.box41.setPlainText(str(a[4][4]));
-        ui_screen.box42.setPlainText(str(a[4][5]));
-        ui_screen.box43.setPlainText(str(a[4][6]));
-        ui_screen.box44.setPlainText(str(a[4][7]));
-        ui_screen.box45.setPlainText(str(a[4][8]));
+        ui_screen.box37.setPlainText(str(a[4][0])) 
+        ui_screen.box38.setPlainText(str(a[4][1])) 
+        ui_screen.box39.setPlainText(str(a[4][2])) 
+        ui_screen.box40.setPlainText(str(a[4][3])) 
+        ui_screen.box41.setPlainText(str(a[4][4])) 
+        ui_screen.box42.setPlainText(str(a[4][5])) 
+        ui_screen.box43.setPlainText(str(a[4][6])) 
+        ui_screen.box44.setPlainText(str(a[4][7])) 
+        ui_screen.box45.setPlainText(str(a[4][8])) 
 
-        ui_screen.box46.setPlainText(str(a[5][0]));
-        ui_screen.box47.setPlainText(str(a[5][1]));
-        ui_screen.box48.setPlainText(str(a[5][2]));
-        ui_screen.box49.setPlainText(str(a[5][3]));
-        ui_screen.box50.setPlainText(str(a[5][4]));
-        ui_screen.box51.setPlainText(str(a[5][5]));
-        ui_screen.box52.setPlainText(str(a[5][6]));
-        ui_screen.box53.setPlainText(str(a[5][7]));
-        ui_screen.box54.setPlainText(str(a[5][8]));
+        ui_screen.box46.setPlainText(str(a[5][0])) 
+        ui_screen.box47.setPlainText(str(a[5][1])) 
+        ui_screen.box48.setPlainText(str(a[5][2])) 
+        ui_screen.box49.setPlainText(str(a[5][3])) 
+        ui_screen.box50.setPlainText(str(a[5][4])) 
+        ui_screen.box51.setPlainText(str(a[5][5])) 
+        ui_screen.box52.setPlainText(str(a[5][6])) 
+        ui_screen.box53.setPlainText(str(a[5][7])) 
+        ui_screen.box54.setPlainText(str(a[5][8])) 
 
-        ui_screen.box55.setPlainText(str(a[6][0]));
-        ui_screen.box56.setPlainText(str(a[6][1]));
-        ui_screen.box57.setPlainText(str(a[6][2]));
-        ui_screen.box58.setPlainText(str(a[6][3]));
-        ui_screen.box59.setPlainText(str(a[6][4]));
-        ui_screen.box60.setPlainText(str(a[6][5]));
-        ui_screen.box61.setPlainText(str(a[6][6]));
-        ui_screen.box62.setPlainText(str(a[6][7]));
-        ui_screen.box63.setPlainText(str(a[6][8]));
+        ui_screen.box55.setPlainText(str(a[6][0])) 
+        ui_screen.box56.setPlainText(str(a[6][1])) 
+        ui_screen.box57.setPlainText(str(a[6][2])) 
+        ui_screen.box58.setPlainText(str(a[6][3])) 
+        ui_screen.box59.setPlainText(str(a[6][4])) 
+        ui_screen.box60.setPlainText(str(a[6][5])) 
+        ui_screen.box61.setPlainText(str(a[6][6])) 
+        ui_screen.box62.setPlainText(str(a[6][7])) 
+        ui_screen.box63.setPlainText(str(a[6][8])) 
 
-        ui_screen.box64.setPlainText(str(a[7][0]));
-        ui_screen.box65.setPlainText(str(a[7][1]));
-        ui_screen.box66.setPlainText(str(a[7][2]));
-        ui_screen.box67.setPlainText(str(a[7][3]));
-        ui_screen.box68.setPlainText(str(a[7][4]));
-        ui_screen.box69.setPlainText(str(a[7][5]));
-        ui_screen.box70.setPlainText(str(a[7][6]));
-        ui_screen.box71.setPlainText(str(a[7][7]));
-        ui_screen.box72.setPlainText(str(a[7][8]));
+        ui_screen.box64.setPlainText(str(a[7][0])) 
+        ui_screen.box65.setPlainText(str(a[7][1])) 
+        ui_screen.box66.setPlainText(str(a[7][2])) 
+        ui_screen.box67.setPlainText(str(a[7][3])) 
+        ui_screen.box68.setPlainText(str(a[7][4])) 
+        ui_screen.box69.setPlainText(str(a[7][5])) 
+        ui_screen.box70.setPlainText(str(a[7][6])) 
+        ui_screen.box71.setPlainText(str(a[7][7])) 
+        ui_screen.box72.setPlainText(str(a[7][8])) 
 
-        ui_screen.box73.setPlainText(str(a[8][0]));
-        ui_screen.box74.setPlainText(str(a[8][1]));
-        ui_screen.box75.setPlainText(str(a[8][2]));
-        ui_screen.box76.setPlainText(str(a[8][3]));
-        ui_screen.box77.setPlainText(str(a[8][4]));
-        ui_screen.box78.setPlainText(str(a[8][5]));
-        ui_screen.box79.setPlainText(str(a[8][6]));
-        ui_screen.box80.setPlainText(str(a[8][7]));
-        ui_screen.box81.setPlainText(str(a[8][8]));
+        ui_screen.box73.setPlainText(str(a[8][0])) 
+        ui_screen.box74.setPlainText(str(a[8][1])) 
+        ui_screen.box75.setPlainText(str(a[8][2])) 
+        ui_screen.box76.setPlainText(str(a[8][3])) 
+        ui_screen.box77.setPlainText(str(a[8][4])) 
+        ui_screen.box78.setPlainText(str(a[8][5])) 
+        ui_screen.box79.setPlainText(str(a[8][6])) 
+        ui_screen.box80.setPlainText(str(a[8][7])) 
+        ui_screen.box81.setPlainText(str(a[8][8])) 
 
     else:
-        pass
+        QMessageBox.warning(mainscreen,'Wrong puzzle','Provided sudoku puzzle is unsolvable')
 
     
 
