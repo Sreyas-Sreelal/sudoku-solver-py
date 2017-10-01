@@ -2,6 +2,8 @@ import sys
 from gui_main import mainscreen,ui_main,app
 from gui_solver import solver_screen,ui_screen
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtGui import QMovie
+
 def UAN(a,i,j): 
  
     for i in range(0,9): 
@@ -81,6 +83,10 @@ Sample matrix for testing
 """
 def shownextscreen():
     mainscreen.hide()
+    bgimg = QMovie("source.gif")
+    ui_screen.background.setMovie(bgimg)
+    bgimg.setScaledSize(ui_screen.background.size())
+    bgimg.start()
     solver_screen.show()
 
 def str2int(buffer):
@@ -285,13 +291,19 @@ def startsolving():
         ui_screen.box81.setPlainText(str(a[8][8])) 
 
     else:
-        QMessageBox.warning(mainscreen,'Wrong puzzle','Provided sudoku puzzle is unsolvable')
+        QMessageBox.warning(mainscreen,'Invalid puzzle','Provided sudoku puzzle is unsolvable')
 
-    
+
 
 if __name__ == "__main__":
     
     mainscreen.show()
     ui_main.Start_Button.clicked.connect(shownextscreen)
     ui_screen.pushButton.clicked.connect(startsolving)
+    loader_img = QMovie("giphy.gif")
+    ui_main.background.setMovie(loader_img)
+    ui_main.background2.setMovie(loader_img)
+    loader_img.setScaledSize(ui_main.background.size())
+    loader_img.start()
+    
     sys.exit(app.exec_())
