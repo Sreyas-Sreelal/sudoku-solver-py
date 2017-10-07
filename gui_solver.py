@@ -1,6 +1,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
+
 class Ui_SudokuSolver(object):
     def setupUi(self, SudokuSolver):
         SudokuSolver.setObjectName("SudokuSolver")
@@ -700,7 +702,7 @@ class Ui_SudokuSolver(object):
 "}")
         self.pushButton.setObjectName("pushButton")
         self.background = QtWidgets.QLabel(SudokuSolver)
-        self.background.setGeometry(QtCore.QRect(220, 140, 361, 301))
+        self.background.setGeometry(QtCore.QRect(0, 0, 801, 601))
         self.background.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
 "color:rgb(170,0,0)")
         self.background.setText("")
@@ -799,6 +801,7 @@ class Ui_SudokuSolver(object):
         SudokuSolver.setWindowTitle(_translate("SudokuSolver", "SudokuSolver"))
         self.label.setText(_translate("SudokuSolver", "Insert the numbers in corresponding column. Leave empty columns as it is."))
         self.pushButton.setText(_translate("SudokuSolver", "Solve Sudoku Puzzle"))
+
 
 
 solver_screen = QtWidgets.QWidget()

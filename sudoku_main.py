@@ -90,9 +90,8 @@ Sample matrix for testing
 """
 def shownextscreen():
     mainscreen.hide()
-    bgimg = QMovie("source.gif")
+    bgimg = QMovie("res/bgexplosion.gif")
     ui_screen.background.autoFillBackground()
-    #ui_screen.background.resize(solver_screen.size())
     ui_screen.background.setMovie(bgimg)
     bgimg.setScaledSize(solver_screen.size())
     bgimg.start()
@@ -309,9 +308,8 @@ if __name__ == "__main__":
     mainscreen.show()
     ui_main.Start_Button.clicked.connect(shownextscreen)
     ui_screen.pushButton.clicked.connect(startsolving)
-    loader_img = QMovie("giphy.gif")
+    loader_img = QMovie("res/bggold.gif")
     ui_main.background.setMovie(loader_img)
-    ui_main.background2.setMovie(loader_img)
     loader_img.setScaledSize(ui_main.background.size())
     loader_img.start()
     

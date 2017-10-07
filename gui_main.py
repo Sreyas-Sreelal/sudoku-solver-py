@@ -79,7 +79,7 @@ class Ui_MainScreen(object):
 "}    ")
         self.Quit_Button.setObjectName("Quit_Button")
         self.background = QtWidgets.QLabel(self.centralWidget)
-        self.background.setGeometry(QtCore.QRect(10, 110, 191, 361))
+        self.background.setGeometry(QtCore.QRect(0, -10, 651, 511))
         self.background.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
 "color:rgb(170,0,0)")
         self.background.setText("")
@@ -106,19 +106,11 @@ class Ui_MainScreen(object):
 "\n"
 "}    ")
         self.About.setObjectName("About")
-        self.background2 = QtWidgets.QLabel(self.centralWidget)
-        self.background2.setGeometry(QtCore.QRect(440, 110, 191, 361))
-        self.background2.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
-"color:rgb(170,0,0)")
-        self.background2.setText("")
-        self.background2.setAlignment(QtCore.Qt.AlignCenter)
-        self.background2.setObjectName("background2")
         self.background.raise_()
         self.Header_Label.raise_()
         self.Start_Button.raise_()
         self.Quit_Button.raise_()
         self.About.raise_()
-        self.background2.raise_()
         MainScreen.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainScreen)
