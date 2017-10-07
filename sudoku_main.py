@@ -44,6 +44,13 @@ def safe(a,i,j,num):
     return False 
  
 
+def checkvalidity(a):
+    for i in range(0,9):
+        for j in range(0,9):
+            if a[i][j]  not in range(0,10):
+                return False
+    return True
+
 def solve(a,i=0,j=0): 
 
     i,j = UAN(a,i,j)
@@ -84,8 +91,10 @@ Sample matrix for testing
 def shownextscreen():
     mainscreen.hide()
     bgimg = QMovie("source.gif")
+    ui_screen.background.autoFillBackground()
+    #ui_screen.background.resize(solver_screen.size())
     ui_screen.background.setMovie(bgimg)
-    bgimg.setScaledSize(ui_screen.background.size())
+    bgimg.setScaledSize(solver_screen.size())
     bgimg.start()
     solver_screen.show()
 
@@ -198,7 +207,7 @@ def startsolving():
     a[8][7] = str2int (ui_screen.box80.toPlainText())
     a[8][8] = str2int (ui_screen.box81.toPlainText())
 
-    if solve(a):
+    if checkvalidity(a) and solve(a):
         ui_screen.box1.setPlainText(str(a[0][0]))
         ui_screen.box2.setPlainText(str(a[0][1]))
         ui_screen.box3.setPlainText(str(a[0][2]))
@@ -289,7 +298,7 @@ def startsolving():
         ui_screen.box79.setPlainText(str(a[8][6])) 
         ui_screen.box80.setPlainText(str(a[8][7])) 
         ui_screen.box81.setPlainText(str(a[8][8])) 
-
+        QMessageBox.information(mainscreen,"Puzzle Solved Successfully","SUdoku puzzle has been solved")
     else:
         QMessageBox.warning(mainscreen,'Invalid puzzle','Provided sudoku puzzle is unsolvable')
 
