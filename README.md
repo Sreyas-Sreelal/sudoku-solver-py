@@ -3,7 +3,7 @@ This is a small application which was written by me in c++.This repository is fo
 
 ### Team members
 * Sreyas
-* Leon
-* Mridhul
+* Leoyon
+* Mrudul
 * Sandra Mariam
 * Renuka
