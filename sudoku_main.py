@@ -1,6 +1,7 @@
 import sys
 from gui_main import mainscreen,ui_main,app
 from gui_solver import solver_screen,ui_screen
+from gui_about import about_screen,ui_about
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtGui import QMovie
 
@@ -88,12 +89,26 @@ Sample matrix for testing
     ]
      
 """
+
+def showabout():
+    mainscreen.hide()
+    bgimg = QMovie('res/aboutbg.gif')
+    ui_about.background.autoFillBackground()
+    ui_about.background.setMovie(bgimg)
+    bgimg.setScaledSize(ui_about.background.size())
+    bgimg.start()
+    about_screen.show()
+
+def aboutback():
+    about_screen.hide()
+    mainscreen.show()
+
 def shownextscreen():
     mainscreen.hide()
     bgimg = QMovie("res/bgexplosion.gif")
     ui_screen.background.autoFillBackground()
     ui_screen.background.setMovie(bgimg)
-    bgimg.setScaledSize(solver_screen.size())
+    bgimg.setScaledSize(ui_screen.background.size())
     bgimg.start()
     solver_screen.show()
 
@@ -307,9 +322,13 @@ if __name__ == "__main__":
     
     mainscreen.show()
     ui_main.Start_Button.clicked.connect(shownextscreen)
+    ui_main.Quit_Button.clicked.connect(app.exit)
+    ui_main.About.clicked.connect(showabout)
     ui_screen.pushButton.clicked.connect(startsolving)
+    ui_about.back_button.clicked.connect(aboutback)
     loader_img = QMovie("res/bggold.gif")
     ui_main.background.setMovie(loader_img)
+    
     loader_img.setScaledSize(ui_main.background.size())
     loader_img.start()
     
