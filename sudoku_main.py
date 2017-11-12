@@ -70,26 +70,6 @@ def solve(a,i=0,j=0):
      
     return False 
  
-
-"""
-Sample matrix for testing 
-   
-    a = [ 
-        [0,8,0, 7,1,2, 0,9,0], 
-        [0,0,0, 0,0,0, 7,1,0], 
-        [0,0,0, 0,9,4, 2,6,0], 
-         
-        [0,0,0, 3,6,0, 4,0,5], 
-        [5,0,0, 0,0,0, 0,0,9], 
-        [7,0,6, 0,2,5, 0,0,0], 
-         
-        [0,5,8, 2,7,0, 0,0,0], 
-        [0,1,7, 0,0,0, 0,0,0], 
-        [0,6,0, 9,4,1, 0,5,7] 
-    ]
-     
-"""
-
 def showabout():
     mainscreen.hide()
     bgimg = QMovie('res/aboutbg.gif')
@@ -325,7 +305,7 @@ if __name__ == "__main__":
     ui_main.Quit_Button.clicked.connect(app.exit)
     ui_main.About.clicked.connect(showabout)
     ui_screen.pushButton.clicked.connect(startsolving)
-    ui_about.back_button.clicked.connect(aboutback)
+    ui_about.Back_Button.clicked.connect(aboutback)
     loader_img = QMovie("res/bggold.gif")
     ui_main.background.setMovie(loader_img)
     

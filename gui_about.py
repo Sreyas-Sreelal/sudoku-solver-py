@@ -44,12 +44,36 @@ class Ui_About(object):
         self.team_members_label.setStyleSheet("background : none;")
         self.team_members_label.setObjectName("team_members_label")
         self.background = QtWidgets.QLabel(self.centralwidget)
-        self.background.setGeometry(QtCore.QRect(-4, -10, 661, 511))
+        self.background.setGeometry(QtCore.QRect(0, -1, 653, 500))
+        self.background.setMinimumSize(QtCore.QSize(653, 500))
+        self.background.setMaximumSize(QtCore.QSize(653, 500))
         self.background.setText("")
         self.background.setObjectName("background")
+        self.Back_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.Back_Button.setGeometry(QtCore.QRect(11, 420, 111, 61))
+        font = QtGui.QFont()
+        font.setFamily("Segoe Script")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Back_Button.setFont(font)
+        self.Back_Button.setStyleSheet("QPushButton\n"
+"{\n"
+"    \n"
+"background:\n"
+"        qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(237, 0, 0, 69), stop:0.386364 rgba(255, 71, 71, 130), stop:0.423533 rgba(255, 0, 0, 145), stop:0.45 rgba(255, 0, 0, 208), stop:0.477581 rgba(255, 71, 71, 130), stop:0.488636 rgba(255, 1, 1, 69), stop:0.55 rgba(255, 0, 0, 255), stop:0.57754 rgba(255, 0, 0, 130), stop:0.625 rgba(255, 0, 0, 69), stop:1 rgba(255, 255, 0, 69));\n"
+"    \n"
+" border: 1px solid black; border-radius: 30px;\n"
+"\n"
+"color:\n"
+"        rgb(255, 255, 255,120);\n"
+"\n"
+"}    ")
+        self.Back_Button.setObjectName("Back_Button")
         self.background.raise_()
         self.back_button.raise_()
         self.team_members_label.raise_()
+        self.Back_Button.raise_()
         About.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(About)
@@ -59,8 +83,8 @@ class Ui_About(object):
         _translate = QtCore.QCoreApplication.translate
         About.setWindowTitle(_translate("About", "About"))
         self.back_button.setText(_translate("About", "Back"))
-        self.team_members_label.setText(_translate("About", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; color:#db7556;\">Team Members</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#4c6aeb;\">Leoyon</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#4c6aeb;\">Mridhul</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#4c6aeb;\">Renuka</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#4c6aeb;\">Sandra</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#4c6aeb;\">Sreyas</span></p><p align=\"center\"><br/></p></body></html>"))
-
+        self.team_members_label.setText(_translate("About", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; color:#00ff7f;\">Team Members</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Leon</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Mridhul</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Renuka</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sandra</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sreyas</span></p><p align=\"center\"><br/></p></body></html>"))
+        self.Back_Button.setText(_translate("About", "Back"))
 
 about_screen = QtWidgets.QMainWindow()
 ui_about = Ui_About()
