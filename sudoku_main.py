@@ -4,6 +4,12 @@ from gui_solver import solver_screen,ui_screen
 from gui_about import about_screen,ui_about
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtGui import QMovie
+from PyQt5.QtCore import QThread
+
+
+def wrapper():
+    threadedsolve = solvethread()
+    threadedsolve.run()
 
 def UAN(a,i,j): 
  
@@ -45,29 +51,30 @@ def safe(a,i,j,num):
     return False 
  
 
-def checkvalidity(a):
+def checkvalidity(a):  
     for i in range(0,9):
         for j in range(0,9):
-            if a[i][j]  not in range(0,10):
+            if a[i][j] not in range(0,10):
                 return False
-    return True
+            elif a[i][j]!= 0:
+                temp = a[i][j]
+                a[i][j] = 0
+                if not safe(a,i,j,temp):
+                    return False
+                a[i][j] = temp            
+    return True 
 
 def solve(a,i=0,j=0): 
-
     i,j = UAN(a,i,j)
     if  i == -1: 
          return True 
     for k in range(1,10): 
-     
         if safe(a,i,j,k): 
-         
             a[i][j] = k  
-
             if solve(a): 
                 return True 
             a[i][j] = 0 
-         
-     
+             
     return False 
  
 def showabout():
@@ -82,6 +89,92 @@ def showabout():
 def aboutback():
     about_screen.hide()
     mainscreen.show()
+def solverback():
+    solver_screen.hide()
+    mainscreen.show()
+
+def clear():
+    ui_screen.box1.clear()
+    ui_screen.box2.clear()
+    ui_screen.box3.clear()
+    ui_screen.box4.clear()
+    ui_screen.box5.clear()
+    ui_screen.box6.clear()
+    ui_screen.box7.clear()
+    ui_screen.box8.clear()
+    ui_screen.box9.clear()
+    ui_screen.box10.clear()
+    ui_screen.box11.clear()
+    ui_screen.box12.clear()
+    ui_screen.box13.clear()
+    ui_screen.box14.clear()
+    ui_screen.box15.clear()
+    ui_screen.box16.clear()
+    ui_screen.box17.clear()
+    ui_screen.box18.clear()
+    ui_screen.box19.clear()
+    ui_screen.box20.clear()
+    ui_screen.box21.clear()
+    ui_screen.box22.clear()
+    ui_screen.box23.clear()
+    ui_screen.box24.clear()
+    ui_screen.box25.clear()
+    ui_screen.box26.clear()
+    ui_screen.box27.clear()
+    ui_screen.box28.clear()
+    ui_screen.box29.clear()
+    ui_screen.box30.clear()
+    ui_screen.box31.clear()
+    ui_screen.box32.clear()
+    ui_screen.box33.clear()
+    ui_screen.box34.clear()
+    ui_screen.box35.clear()
+    ui_screen.box36.clear()
+    ui_screen.box37.clear()
+    ui_screen.box38.clear()
+    ui_screen.box39.clear()
+    ui_screen.box40.clear()
+    ui_screen.box41.clear()
+    ui_screen.box42.clear()
+    ui_screen.box43.clear()
+    ui_screen.box44.clear()
+    ui_screen.box45.clear()
+    ui_screen.box46.clear()
+    ui_screen.box47.clear()
+    ui_screen.box48.clear()
+    ui_screen.box49.clear()
+    ui_screen.box50.clear()
+    ui_screen.box51.clear()
+    ui_screen.box52.clear()
+    ui_screen.box53.clear()
+    ui_screen.box54.clear()
+    ui_screen.box55.clear()
+    ui_screen.box56.clear()
+    ui_screen.box57.clear()
+    ui_screen.box58.clear()
+    ui_screen.box59.clear()
+    ui_screen.box60.clear()
+    ui_screen.box61.clear()
+    ui_screen.box62.clear()
+    ui_screen.box63.clear()
+    ui_screen.box64.clear()
+    ui_screen.box65.clear()
+    ui_screen.box66.clear()
+    ui_screen.box67.clear()
+    ui_screen.box68.clear()
+    ui_screen.box69.clear()
+    ui_screen.box70.clear()
+    ui_screen.box71.clear()
+    ui_screen.box72.clear()
+    ui_screen.box73.clear()
+    ui_screen.box74.clear()
+    ui_screen.box75.clear()
+    ui_screen.box76.clear()
+    ui_screen.box77.clear()
+    ui_screen.box78.clear()
+    ui_screen.box79.clear()
+    ui_screen.box80.clear()
+    ui_screen.box81.clear()
 
 def shownextscreen():
     mainscreen.hide()
@@ -92,11 +185,11 @@ def shownextscreen():
     bgimg.start()
     solver_screen.show()
 
-def str2int(buffer):
-    if buffer == None or buffer == "":
+def str2int(buffers):
+    if buffers == None or buffers == "":
         return 0
     else:
-        return int(buffer)
+        return int(buffers)
     
 def startsolving():
     a = [ 
@@ -111,96 +204,100 @@ def startsolving():
             [0,0,0, 0,0,0, 0,0,0] 
         
     ]
-    a[0][0] = str2int (ui_screen.box1.toPlainText())
-    a[0][1] = str2int (ui_screen.box2.toPlainText())
-    a[0][2] = str2int (ui_screen.box3.toPlainText())
-    a[0][3] = str2int (ui_screen.box4.toPlainText())
-    a[0][4] = str2int (ui_screen.box5.toPlainText())
-    a[0][5] = str2int (ui_screen.box6.toPlainText())
-    a[0][6] = str2int (ui_screen.box7.toPlainText())
-    a[0][7] = str2int (ui_screen.box8.toPlainText())
-    a[0][8] = str2int (ui_screen.box9.toPlainText())
+    try:
+        a[0][0] = str2int (ui_screen.box1.toPlainText())
+        a[0][1] = str2int (ui_screen.box2.toPlainText())
+        a[0][2] = str2int (ui_screen.box3.toPlainText())
+        a[0][3] = str2int (ui_screen.box4.toPlainText())
+        a[0][4] = str2int (ui_screen.box5.toPlainText())
+        a[0][5] = str2int (ui_screen.box6.toPlainText())
+        a[0][6] = str2int (ui_screen.box7.toPlainText())
+        a[0][7] = str2int (ui_screen.box8.toPlainText())
+        a[0][8] = str2int (ui_screen.box9.toPlainText())
 
-    a[0][0] = str2int (ui_screen.box10.toPlainText())
-    a[1][1] = str2int (ui_screen.box11.toPlainText())
-    a[1][2] = str2int (ui_screen.box12.toPlainText())
-    a[1][3] = str2int (ui_screen.box13.toPlainText())
-    a[1][4] = str2int (ui_screen.box14.toPlainText())
-    a[1][5] = str2int (ui_screen.box15.toPlainText())
-    a[1][6] = str2int (ui_screen.box16.toPlainText())
-    a[1][7] = str2int (ui_screen.box17.toPlainText())
-    a[1][8] = str2int (ui_screen.box18.toPlainText())
+        a[1][0] = str2int (ui_screen.box10.toPlainText())
+        a[1][1] = str2int (ui_screen.box11.toPlainText())
+        a[1][2] = str2int (ui_screen.box12.toPlainText())
+        a[1][3] = str2int (ui_screen.box13.toPlainText())
+        a[1][4] = str2int (ui_screen.box14.toPlainText())
+        a[1][5] = str2int (ui_screen.box15.toPlainText())
+        a[1][6] = str2int (ui_screen.box16.toPlainText())
+        a[1][7] = str2int (ui_screen.box17.toPlainText())
+        a[1][8] = str2int (ui_screen.box18.toPlainText())
 
-    a[2][0] = str2int (ui_screen.box19.toPlainText())
-    a[2][1] = str2int (ui_screen.box20.toPlainText())
-    a[2][2] = str2int (ui_screen.box21.toPlainText())
-    a[2][3] = str2int (ui_screen.box22.toPlainText())
-    a[2][4] = str2int (ui_screen.box23.toPlainText())
-    a[2][5] = str2int (ui_screen.box24.toPlainText())
-    a[2][6] = str2int (ui_screen.box25.toPlainText())
-    a[2][7] = str2int (ui_screen.box26.toPlainText())
-    a[2][8] = str2int (ui_screen.box27.toPlainText())
+        a[2][0] = str2int (ui_screen.box19.toPlainText())
+        a[2][1] = str2int (ui_screen.box20.toPlainText())
+        a[2][2] = str2int (ui_screen.box21.toPlainText())
+        a[2][3] = str2int (ui_screen.box22.toPlainText())
+        a[2][4] = str2int (ui_screen.box23.toPlainText())
+        a[2][5] = str2int (ui_screen.box24.toPlainText())
+        a[2][6] = str2int (ui_screen.box25.toPlainText())
+        a[2][7] = str2int (ui_screen.box26.toPlainText())
+        a[2][8] = str2int (ui_screen.box27.toPlainText())
 
-    a[3][0] = str2int (ui_screen.box28.toPlainText())
-    a[3][1] = str2int (ui_screen.box29.toPlainText())
-    a[3][2] = str2int (ui_screen.box30.toPlainText())
-    a[3][3] = str2int (ui_screen.box31.toPlainText())
-    a[3][4] = str2int (ui_screen.box32.toPlainText())
-    a[3][5] = str2int (ui_screen.box33.toPlainText())
-    a[3][6] = str2int (ui_screen.box34.toPlainText())
-    a[3][7] = str2int (ui_screen.box35.toPlainText())
-    a[3][8] = str2int (ui_screen.box36.toPlainText())
+        a[3][0] = str2int (ui_screen.box28.toPlainText())
+        a[3][1] = str2int (ui_screen.box29.toPlainText())
+        a[3][2] = str2int (ui_screen.box30.toPlainText())
+        a[3][3] = str2int (ui_screen.box31.toPlainText())
+        a[3][4] = str2int (ui_screen.box32.toPlainText())
+        a[3][5] = str2int (ui_screen.box33.toPlainText())
+        a[3][6] = str2int (ui_screen.box34.toPlainText())
+        a[3][7] = str2int (ui_screen.box35.toPlainText())
+        a[3][8] = str2int (ui_screen.box36.toPlainText())
 
-    a[4][0] = str2int (ui_screen.box37.toPlainText())
-    a[4][1] = str2int (ui_screen.box38.toPlainText())
-    a[4][2] = str2int (ui_screen.box39.toPlainText())
-    a[4][3] = str2int (ui_screen.box40.toPlainText())
-    a[4][4] = str2int (ui_screen.box41.toPlainText())
-    a[4][5] = str2int (ui_screen.box42.toPlainText())
-    a[4][6] = str2int (ui_screen.box43.toPlainText())
-    a[4][7] = str2int (ui_screen.box44.toPlainText())
-    a[4][8] = str2int (ui_screen.box45.toPlainText())
+        a[4][0] = str2int (ui_screen.box37.toPlainText())
+        a[4][1] = str2int (ui_screen.box38.toPlainText())
+        a[4][2] = str2int (ui_screen.box39.toPlainText())
+        a[4][3] = str2int (ui_screen.box40.toPlainText())
+        a[4][4] = str2int (ui_screen.box41.toPlainText())
+        a[4][5] = str2int (ui_screen.box42.toPlainText())
+        a[4][6] = str2int (ui_screen.box43.toPlainText())
+        a[4][7] = str2int (ui_screen.box44.toPlainText())
+        a[4][8] = str2int (ui_screen.box45.toPlainText())
 
-    a[5][0] = str2int (ui_screen.box46.toPlainText())
-    a[5][1] = str2int (ui_screen.box47.toPlainText())
-    a[5][2] = str2int (ui_screen.box48.toPlainText())
-    a[5][3] = str2int (ui_screen.box49.toPlainText())
-    a[5][4] = str2int (ui_screen.box50.toPlainText())
-    a[5][5] = str2int (ui_screen.box51.toPlainText())
-    a[5][6] = str2int (ui_screen.box52.toPlainText())
-    a[5][7] = str2int (ui_screen.box53.toPlainText())
-    a[5][8] = str2int (ui_screen.box54.toPlainText())
+        a[5][0] = str2int (ui_screen.box46.toPlainText())
+        a[5][1] = str2int (ui_screen.box47.toPlainText())
+        a[5][2] = str2int (ui_screen.box48.toPlainText())
+        a[5][3] = str2int (ui_screen.box49.toPlainText())
+        a[5][4] = str2int (ui_screen.box50.toPlainText())
+        a[5][5] = str2int (ui_screen.box51.toPlainText())
+        a[5][6] = str2int (ui_screen.box52.toPlainText())
+        a[5][7] = str2int (ui_screen.box53.toPlainText())
+        a[5][8] = str2int (ui_screen.box54.toPlainText())
 
-    a[6][0] = str2int (ui_screen.box55.toPlainText())
-    a[6][1] = str2int (ui_screen.box56.toPlainText())
-    a[6][2] = str2int (ui_screen.box57.toPlainText())
-    a[6][3] = str2int (ui_screen.box58.toPlainText())
-    a[6][4] = str2int (ui_screen.box59.toPlainText())
-    a[6][5] = str2int (ui_screen.box60.toPlainText())
-    a[6][6] = str2int (ui_screen.box61.toPlainText())
-    a[6][7] = str2int (ui_screen.box62.toPlainText())
-    a[6][8] = str2int (ui_screen.box63.toPlainText())
+        a[6][0] = str2int (ui_screen.box55.toPlainText())
+        a[6][1] = str2int (ui_screen.box56.toPlainText())
+        a[6][2] = str2int (ui_screen.box57.toPlainText())
+        a[6][3] = str2int (ui_screen.box58.toPlainText())
+        a[6][4] = str2int (ui_screen.box59.toPlainText())
+        a[6][5] = str2int (ui_screen.box60.toPlainText())
+        a[6][6] = str2int (ui_screen.box61.toPlainText())
+        a[6][7] = str2int (ui_screen.box62.toPlainText())
+        a[6][8] = str2int (ui_screen.box63.toPlainText())
 
-    a[7][0] = str2int (ui_screen.box64.toPlainText())
-    a[7][1] = str2int (ui_screen.box65.toPlainText())
-    a[7][2] = str2int (ui_screen.box66.toPlainText())
-    a[7][3] = str2int (ui_screen.box67.toPlainText())
-    a[7][4] = str2int (ui_screen.box68.toPlainText())
-    a[7][5] = str2int (ui_screen.box69.toPlainText())
-    a[7][6] = str2int (ui_screen.box70.toPlainText())
-    a[7][7] = str2int (ui_screen.box71.toPlainText())
-    a[7][8] = str2int (ui_screen.box72.toPlainText())
+        a[7][0] = str2int (ui_screen.box64.toPlainText())
+        a[7][1] = str2int (ui_screen.box65.toPlainText())
+        a[7][2] = str2int (ui_screen.box66.toPlainText())
+        a[7][3] = str2int (ui_screen.box67.toPlainText())
+        a[7][4] = str2int (ui_screen.box68.toPlainText())
+        a[7][5] = str2int (ui_screen.box69.toPlainText())
+        a[7][6] = str2int (ui_screen.box70.toPlainText())
+        a[7][7] = str2int (ui_screen.box71.toPlainText())
+        a[7][8] = str2int (ui_screen.box72.toPlainText())
 
-    a[8][0] = str2int (ui_screen.box73.toPlainText())
-    a[8][1] = str2int (ui_screen.box74.toPlainText())
-    a[8][2] = str2int (ui_screen.box75.toPlainText())
-    a[8][3] = str2int (ui_screen.box76.toPlainText())
-    a[8][4] = str2int (ui_screen.box77.toPlainText())
-    a[8][5] = str2int (ui_screen.box78.toPlainText())
-    a[8][6] = str2int (ui_screen.box79.toPlainText())
-    a[8][7] = str2int (ui_screen.box80.toPlainText())
-    a[8][8] = str2int (ui_screen.box81.toPlainText())
-
+        a[8][0] = str2int (ui_screen.box73.toPlainText())
+        a[8][1] = str2int (ui_screen.box74.toPlainText())
+        a[8][2] = str2int (ui_screen.box75.toPlainText())
+        a[8][3] = str2int (ui_screen.box76.toPlainText())
+        a[8][4] = str2int (ui_screen.box77.toPlainText())
+        a[8][5] = str2int (ui_screen.box78.toPlainText())
+        a[8][6] = str2int (ui_screen.box79.toPlainText())
+        a[8][7] = str2int (ui_screen.box80.toPlainText())
+        a[8][8] = str2int (ui_screen.box81.toPlainText())
+    except:
+        QMessageBox.warning(mainscreen,"Invalid puzzle","The provided sudoku is unsolvable.")
+        return
+   
     if checkvalidity(a) and solve(a):
         ui_screen.box1.setPlainText(str(a[0][0]))
         ui_screen.box2.setPlainText(str(a[0][1]))
@@ -292,7 +389,7 @@ def startsolving():
         ui_screen.box79.setPlainText(str(a[8][6])) 
         ui_screen.box80.setPlainText(str(a[8][7])) 
         ui_screen.box81.setPlainText(str(a[8][8])) 
-        QMessageBox.information(mainscreen,"Puzzle Solved Successfully","SUdoku puzzle has been solved")
+        QMessageBox.information(mainscreen,"Puzzle Solved Successfully","Sudoku puzzle has been solved")
     else:
         QMessageBox.warning(mainscreen,'Invalid puzzle','Provided sudoku puzzle is unsolvable')
 
@@ -305,10 +402,12 @@ if __name__ == "__main__":
     ui_main.Quit_Button.clicked.connect(app.exit)
     ui_main.About.clicked.connect(showabout)
     ui_screen.pushButton.clicked.connect(startsolving)
+    ui_screen.back_button.clicked.connect(solverback)
+    ui_screen.clear_button.clicked.connect(clear)
+        
     ui_about.Back_Button.clicked.connect(aboutback)
     loader_img = QMovie("res/bggold.gif")
     ui_main.background.setMovie(loader_img)
-    
     loader_img.setScaledSize(ui_main.background.size())
     loader_img.start()
     

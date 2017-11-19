@@ -83,7 +83,7 @@ class Ui_About(object):
         _translate = QtCore.QCoreApplication.translate
         About.setWindowTitle(_translate("About", "About"))
         self.back_button.setText(_translate("About", "Back"))
-        self.team_members_label.setText(_translate("About", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; color:#00ff7f;\">Team Members</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Leon</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Mridhul</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Renuka</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sandra</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sreyas</span></p><p align=\"center\"><br/></p></body></html>"))
+        self.team_members_label.setText(_translate("About", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; color:#00ff7f;\">Team Members</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Leoyon</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Mrudul</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Renuka</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sandra</span></p><p align=\"center\"><span style=\" font-size:18pt; color:#0000ff;\">Sreyas</span></p><p align=\"center\"><br/></p></body></html>"))
         self.Back_Button.setText(_translate("About", "Back"))
 
 about_screen = QtWidgets.QMainWindow()

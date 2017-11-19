@@ -2,7 +2,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-
 class Ui_SudokuSolver(object):
     def setupUi(self, SudokuSolver):
         SudokuSolver.setObjectName("SudokuSolver")
@@ -328,17 +327,6 @@ class Ui_SudokuSolver(object):
 "}")
         self.box20.setPlainText("")
         self.box20.setObjectName("box20")
-        self.box1 = QtWidgets.QPlainTextEdit(SudokuSolver)
-        self.box1.setGeometry(QtCore.QRect(160, 90, 30, 30))
-        font = QtGui.QFont()
-        font.setPointSize(6)
-        self.box1.setFont(font)
-        self.box1.setStyleSheet("QPlainTextEdit\n"
-"{\n"
-"color:rgb(255, 255, 255);\n"
-"}")
-        self.box1.setPlainText("")
-        self.box1.setObjectName("box1")
         self.box10 = QtWidgets.QPlainTextEdit(SudokuSolver)
         self.box10.setGeometry(QtCore.QRect(160, 130, 30, 30))
         self.box10.setStyleSheet("QPlainTextEdit\n"
@@ -675,13 +663,9 @@ class Ui_SudokuSolver(object):
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("QLabel\n"
-"{\n"
-"background:\n"
-"rgb(0,0,0,0);\n"
-"color:\n"
-"rgb(255,0,120,230);\n"
-"}")
+        self.label.setStyleSheet("background:rgb(0,0,0,0);\n"
+"color:rgb(255,69,0,230);\n"
+"")
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(SudokuSolver)
         self.pushButton.setGeometry(QtCore.QRect(150, 530, 501, 41))
@@ -708,6 +692,57 @@ class Ui_SudokuSolver(object):
         self.background.setText("")
         self.background.setAlignment(QtCore.Qt.AlignCenter)
         self.background.setObjectName("background")
+        self.back_button = QtWidgets.QPushButton(SudokuSolver)
+        self.back_button.setGeometry(QtCore.QRect(20, 90, 91, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.back_button.setFont(font)
+        self.back_button.setStyleSheet("QPushButton\n"
+"{\n"
+"border:1px solid black;\n"
+"border-radius:10px;\n"
+"background:\n"
+"qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(237, 0, 0, 69), stop:0.386364 rgba(255, 71, 71, 130), stop:0.423533 rgba(255, 0, 0, 145), stop:0.45 rgba(255, 0, 0, 208), stop:0.477581 rgba(255, 71, 71, 130), stop:0.488636 rgba(255, 1, 1, 69), stop:0.55 rgba(255, 0, 0, 255), stop:0.57754 rgba(255, 0, 0, 130), stop:0.625 rgba(255, 0, 0, 69), stop:1 rgba(255, 255, 0, 69));\n"
+"color:\n"
+"rgb(255,255,255,120);\n"
+"}")
+        self.back_button.setObjectName("back_button")
+        self.background_2 = QtWidgets.QLabel(SudokuSolver)
+        self.background_2.setGeometry(QtCore.QRect(670, 0, 801, 601))
+        self.background_2.setStyleSheet("background-color: rgb(255, 255, 255,0);\n"
+"color:rgb(170,0,0)")
+        self.background_2.setText("")
+        self.background_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.background_2.setObjectName("background_2")
+        self.clear_button = QtWidgets.QPushButton(SudokuSolver)
+        self.clear_button.setGeometry(QtCore.QRect(690, 90, 91, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.clear_button.setFont(font)
+        self.clear_button.setStyleSheet("QPushButton\n"
+"{\n"
+"border:1px solid black;\n"
+"border-radius:10px;\n"
+"background:\n"
+"qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(237, 0, 0, 69), stop:0.386364 rgba(255, 71, 71, 130), stop:0.423533 rgba(255, 0, 0, 145), stop:0.45 rgba(255, 0, 0, 208), stop:0.477581 rgba(255, 71, 71, 130), stop:0.488636 rgba(255, 1, 1, 69), stop:0.55 rgba(255, 0, 0, 255), stop:0.57754 rgba(255, 0, 0, 130), stop:0.625 rgba(255, 0, 0, 69), stop:1 rgba(255, 255, 0, 69));\n"
+"color:\n"
+"rgb(255,255,255,120);\n"
+"}")
+        self.clear_button.setObjectName("clear_button")
+        self.box1 = QtWidgets.QPlainTextEdit(SudokuSolver)
+        self.box1.setGeometry(QtCore.QRect(160, 90, 30, 30))
+        self.box1.setStyleSheet("QPlainTextEdit\n"
+"{\n"
+"color:rgb(255, 255, 255);\n"
+"}")
+        self.box1.setPlainText("")
+        self.box1.setObjectName("box1")
         self.background.raise_()
         self.box4.raise_()
         self.box5.raise_()
@@ -748,7 +783,6 @@ class Ui_SudokuSolver(object):
         self.box2.raise_()
         self.box11.raise_()
         self.box20.raise_()
-        self.box1.raise_()
         self.box10.raise_()
         self.box19.raise_()
         self.box29.raise_()
@@ -792,6 +826,10 @@ class Ui_SudokuSolver(object):
         self.box27.raise_()
         self.label.raise_()
         self.pushButton.raise_()
+        self.back_button.raise_()
+        self.background_2.raise_()
+        self.clear_button.raise_()
+        self.box1.raise_()
 
         self.retranslateUi(SudokuSolver)
         QtCore.QMetaObject.connectSlotsByName(SudokuSolver)
@@ -801,6 +839,9 @@ class Ui_SudokuSolver(object):
         SudokuSolver.setWindowTitle(_translate("SudokuSolver", "SudokuSolver"))
         self.label.setText(_translate("SudokuSolver", "Insert the numbers in corresponding column. Leave empty columns as it is."))
         self.pushButton.setText(_translate("SudokuSolver", "Solve Sudoku Puzzle"))
+        self.back_button.setText(_translate("SudokuSolver", "Back"))
+        self.clear_button.setText(_translate("SudokuSolver", "Clear"))
+
 
 
 
